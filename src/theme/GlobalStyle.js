@@ -69,4 +69,4 @@ const GlobalStyle = styled.createGlobalStyle`
     }
   }
 `
-export default GlobalStyle
+export default GlobalStyle;

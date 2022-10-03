@@ -11,4 +11,4 @@ const productsReducer = (state = INIT_STATE, action) => {
   }
 }
 
-export default productsReducer
+export default productsReducer;
