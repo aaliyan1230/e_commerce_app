@@ -45,7 +45,7 @@ const HomeWrapper = styled.div`
 const Message = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50rem;
+  width: 60rem;
 
   animation: fadeIn ease 2s;
 
