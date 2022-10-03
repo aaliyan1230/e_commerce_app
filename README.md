@@ -1,6 +1,6 @@
 # e commerce app
 
-This project is a dummy e commerce application built with redux for stte management
+This project is a dummy e commerce application built with redux for state management
 
 ## Tools used:
 
