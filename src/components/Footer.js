@@ -10,9 +10,9 @@ const Footer = () => {
 
   return (
     <FooterWrapper>
-      Copyright © 2021 michalosman
+      Copyright © 2022 Muhammad Aaliyan
       <GithubLink
-        href="https://github.com/michalosman"
+        href="https://github.com/aaliyan1230"
         target="_blank"
         rel="noopener"
       >

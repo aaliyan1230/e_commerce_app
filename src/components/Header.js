@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { FaShoppingCart } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
-import Button from './elements/Button'
+import Button from './Button'
 import routes from '../constants/routes.json'
 import { openCart } from '../state/actions'
 
@@ -19,7 +19,7 @@ const Header = () => {
     <HeaderWrapper>
       <Container>
         <Link to={routes.HOME}>
-          <Logo>FakeStore</Logo>
+          <Logo>MorbStore</Logo>
         </Link>
         <Navbar>
           <NavbarLink to={routes.HOME}>Home</NavbarLink>
