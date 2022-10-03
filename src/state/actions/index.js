@@ -1,4 +1,4 @@
-import { openCart, closeCart } from './isCartOpen'
+import { openCart, closeCart } from './cartActive'
 import { addToCart, removeFromCart } from './cart'
 import { setProducts } from './products'
 

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { FaMinus, FaPlus } from 'react-icons/fa'
 import { useDispatch } from 'react-redux'
-import Button from '../elements/Button'
+import Button from '../Button'
 import { addToCart, removeFromCart } from '../../state/actions'
 
 const CartItem = ({ id, title, price, image, quantity }) => {
