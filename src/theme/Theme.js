@@ -1,6 +1,7 @@
 const Theme = {
     colors: {
-      primary: '#C7FA3C',
+        
+      primary: '#ffff00',
       red: '#ff9999',
       dark: '#000',
       light: '#FFF',
@@ -10,13 +11,13 @@ const Theme = {
         dark: '#7B7B7B',
       },
       hover: {
-        primary: '#9fc830',
+        primary: '#e6e600',
         red: '#ee8888',
         grey: '#d4d4d4',
         dark: '#333',
       },
       active: {
-        primary: '#d5fb6e',
+        primary: '#ffff4d',
         red: '#dd7777',
         grey: '#c3c3c3',
         dark: '#444',

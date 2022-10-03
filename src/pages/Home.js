@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <HomeWrapper>
       <Message>
-        <SmallMessage>Most online store of all time!</SmallMessage>
+        <SmallMessage>Best online store of the decade!</SmallMessage>
         <BigMessage>We sell merchandise, Its Fashion Time!</BigMessage>
         <Link to={routes.PRODUCTS}>
           <Button
