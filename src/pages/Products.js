@@ -72,4 +72,4 @@ const ProductsWrapper = styled.div`
   }
 `
 
-export default Products
+export default Products;

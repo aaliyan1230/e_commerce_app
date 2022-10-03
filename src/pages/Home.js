@@ -116,4 +116,4 @@ const Image = styled.img`
   }
 `
 
-export default Home
+export default Home;

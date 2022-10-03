@@ -13,14 +13,14 @@ const Cart = () => {
 
   const sumTotal = () => {
     return cart
-      .reduce(
+      ?.reduce(
         (total, cartItem) => total + cartItem.price * cartItem.quantity,
         0
       )
       .toFixed(2)
   }
 
-  const cartItems = cart.map((cartItem) => (
+  const cartItems = cart?.map((cartItem) => (
     <CartItem
       key={uuidv4()}
       id={cartItem.id}

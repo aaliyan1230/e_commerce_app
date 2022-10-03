@@ -12,14 +12,14 @@ const Header = () => {
   const dispatch = useDispatch()
 
   const sumQuantity = () => {
-    return cart.reduce((quantity, cartItem) => quantity + cartItem.quantity, 0)
+    return cart?.reduce((quantity, cartItem) => quantity + cartItem.quantity, 0)
   }
 
   return (
     <HeaderWrapper>
       <Container>
         <Link to={routes.HOME}>
-          <Logo>MorbStore</Logo>
+          <Logo>Morb Store</Logo>
         </Link>
         <Navbar>
           <NavbarLink to={routes.HOME}>Home</NavbarLink>
@@ -105,4 +105,4 @@ const Quantity = styled.div`
   font-weight: bold;
 `
 
-export default Header
+export default Header;

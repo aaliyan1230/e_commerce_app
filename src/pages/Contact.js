@@ -107,4 +107,4 @@ const SocialLink = styled.a`
   }
 `
 
-export default Contact
+export default Contact;
