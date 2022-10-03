@@ -1,5 +1,5 @@
 {
-  "HOME": "/shopping-cart",
-  "PRODUCTS": "/shopping-cart/products",
-  "CONTACT": "/shopping-cart/contact"
+  "HOME": "/",
+  "PRODUCTS": "/products",
+  "CONTACT": "/contact"
 }

@@ -10,7 +10,7 @@ const Home = () => {
     <HomeWrapper>
       <Message>
         <SmallMessage>Most online store of all time!</SmallMessage>
-        <BigMessage>We are an online store selling fashion items. Its Fashion Time!</BigMessage>
+        <BigMessage>We sell merchandise, Its Fashion Time!</BigMessage>
         <Link to={routes.PRODUCTS}>
           <Button
             content="Shop now"
@@ -92,6 +92,7 @@ const BigMessage = styled.div`
 
 const Image = styled.img`
   width: 75rem;
+  border-radius: 10px;
   animation: fadeIn ease 2s;
 
   @keyframes fadeIn {
