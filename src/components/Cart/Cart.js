@@ -1,28 +1,26 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import { v4 as uuidv4 } from "uuid";
-import { useSelector, useDispatch } from "react-redux";
-import Button from "../Button";
-import CartItem from "./CartItem";
-import { closeCart } from "../../state/actions";
-import { cartClosed } from "../../state/cartActive/cartActiveSlice";
+import React from 'react'
+import styled, { css } from 'styled-components'
+import { v4 as uuidv4 } from 'uuid'
+import { useSelector, useDispatch } from 'react-redux'
+import Button from '../Button'
+import CartItem from './CartItem'
+import { closeCart } from '../../state/actions'
 
 const Cart = () => {
-  const cart = useSelector((state) => state.cart);
-  const cartActive = useSelector((state) => state.cartActive);
-  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart)
+  const cartActive = useSelector((state) => state.cartActive)
+  const dispatch = useDispatch()
 
-  // const sumTotal = () => {
-  //   return cart
-  //     ?.reduce(
-  //       (total, cartItem) => total + cartItem.price * cartItem.quantity,
-  //       0
-  //     )
-  //     .toFixed(2);
-  // };
+  const sumTotal = () => {
+    return cart
+      ?.reduce(
+        (total, cartItem) => total + cartItem.price * cartItem.quantity,
+        0
+      )
+      .toFixed(2)
+  }
 
-  const cartItems = [];
-  cart.map((cartItem) => (
+  const cartItems = cart?.map((cartItem) => (
     <CartItem
       key={uuidv4()}
       id={cartItem.id}
@@ -31,14 +29,14 @@ const Cart = () => {
       image={cartItem.image}
       quantity={cartItem.quantity}
     ></CartItem>
-  ));
+  ))
 
   return (
     <>
       <CartWrapper isOpen={cartActive}>
         <Title>Your shopping cart</Title>
         <Products>{cartItems}</Products>
-        <Total>Total: ${}</Total>
+        <Total>Total: ${sumTotal()}</Total>
         <Button
           content="Checkout"
           size="wide"
@@ -46,18 +44,17 @@ const Cart = () => {
           animation="color"
         />
         <Button
-          // onClick={() => cartClosed()}
-          onClick={() => dispatch(cartClosed())}
+          onClick={() => dispatch(closeCart())}
           content="Close"
           size="wide"
           color="red"
           animation="color"
         />
       </CartWrapper>
-      <Overlay onClick={() => dispatch(cartClosed())} isOpen={cartActive} />
+      <Overlay onClick={() => dispatch(closeCart())} isOpen={cartActive} />
     </>
-  );
-};
+  )
+}
 
 const CartWrapper = styled.div`
   position: fixed;
@@ -82,13 +79,13 @@ const CartWrapper = styled.div`
   @media (max-width: 480px) {
     width: 100%;
   }
-`;
+`
 
 const Title = styled.div`
   margin-bottom: 2rem;
   font-size: 4rem;
   font-weight: bold;
-`;
+`
 
 const Products = styled.div`
   display: flex;
@@ -96,11 +93,11 @@ const Products = styled.div`
   gap: 3rem;
   width: 100%;
   overflow: auto;
-`;
+`
 
 const Total = styled.div`
   font-weight: bold;
-`;
+`
 
 const Overlay = styled.div`
   position: fixed;
@@ -116,6 +113,6 @@ const Overlay = styled.div`
     css`
       left: 0;
     `}
-`;
+`
 
-export default Cart;
+export default Cart

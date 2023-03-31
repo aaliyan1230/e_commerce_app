@@ -1,15 +1,15 @@
-// import { OPEN_CART, CLOSE_CART } from "../../constants/actionTypes";
+import { OPEN_CART, CLOSE_CART } from '../../constants/actionTypes'
 
-// const openCart = () => {
-//   return {
-//     type: OPEN_CART,
-//   };
-// };
+const openCart = () => {
+  return {
+    type: OPEN_CART,
+  }
+}
 
-// const closeCart = () => {
-//   return {
-//     type: CLOSE_CART,
-//   };
-// };
+const closeCart = () => {
+  return {
+    type: CLOSE_CART,
+  }
+}
 
-// export { openCart, closeCart };
+export { openCart, closeCart }
