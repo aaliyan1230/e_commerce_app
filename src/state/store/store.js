@@ -2,10 +2,10 @@
 // import thunk from 'redux-thunk'
 // import rootReducer from '../reducers'
 import { configureStore } from "@reduxjs/toolkit";
-import cartActiveReducer from "../reducers/cartActive";
-import productsReducer from "../reducers/products";
-import cartReducer from "../reducers/cart";
-import { api } from "../apiSlice/apiSlice";
+import cartActiveReducer from "../cartActive/cartActiveSlice";
+import productsReducer from "../products/productsSlice";
+import { cartReducer } from "../reducers/cart";
+import { api } from "../api/apiSlice";
 
 export const store = configureStore({
   reducer: {
