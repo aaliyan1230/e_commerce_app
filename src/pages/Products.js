@@ -1,41 +1,49 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
-import { v4 as uuidv4 } from "uuid";
-import ProductCard from "../components/Products/ProductCard";
-import { useGetProductsQuery } from "../state/api/apiSlice";
+import React, { useEffect } from 'react'
+import styled from 'styled-components'
+import { v4 as uuidv4 } from 'uuid'
+import { useDispatch, useSelector } from 'react-redux'
+import ProductCard from '../components/Products/ProductCard'
+import { setProducts } from '../state/actions/products'
 
 const Products = () => {
-  const { data: products, isFetching, isSuccess } = useGetProductsQuery();
+  const products = useSelector((state) => state.products)
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    if (products) {
-      filterProducts(products);
-    }
+    loadProducts()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
+
+  const loadProducts = async () => {
+    dispatch(setProducts(filterProducts(await fetchProducts())))
+  }
+
+  const fetchProducts = async () => {
+    const response = await fetch('https://fakestoreapi.com/products')
+    let data = await response.json()
+    return data
+  }
 
   const filterProducts = (products) => {
     return products.filter(
       (product) =>
         product.category === `men's clothing` ||
         product.category === `women's clothing`
-    );
-  };
+    )
+  }
 
-  const productCards = products
-    ? products.map((product) => (
-        <ProductCard
-          key={uuidv4()}
-          id={product.id}
-          title={product.title}
-          price={product.price}
-          image={product.image}
-        />
-      ))
-    : null;
+  const productCards = products.map((product) => (
+    <ProductCard
+      key={uuidv4()}
+      id={product.id}
+      title={product.title}
+      price={product.price}
+      image={product.image}
+    />
+  ))
 
-  return <ProductsWrapper>{productCards}</ProductsWrapper>;
-};
+  return <ProductsWrapper>{productCards}</ProductsWrapper>
+}
 
 const ProductsWrapper = styled.div`
   display: grid;
@@ -62,6 +70,6 @@ const ProductsWrapper = styled.div`
       opacity: 1;
     }
   }
-`;
+`
 
 export default Products;

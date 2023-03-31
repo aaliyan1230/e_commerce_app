@@ -1,24 +1,23 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import { FaMinus, FaPlus } from "react-icons/fa";
-import { useDispatch } from "react-redux";
-import Button from "../Button";
-import { addToCart, removeFromCart } from "../../state/actions";
-import { addedToCart } from "../../state/reducers/cart";
+import React from 'react'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import { FaMinus, FaPlus } from 'react-icons/fa'
+import { useDispatch } from 'react-redux'
+import Button from '../Button'
+import { addToCart, removeFromCart } from '../../state/actions'
 
 const CartItem = ({ id, title, price, image, quantity }) => {
-  const cartItem = { id, title, price, image, quantity };
-  const product = { id, title, price, image };
-  const dispatch = useDispatch();
+  const cartItem = { id, title, price, image, quantity }
+  const product = { id, title, price, image }
+  const dispatch = useDispatch()
 
   const formatTitle = (title) => {
-    return title.length <= 14 ? title : title.substr(0, 14) + "...";
-  };
+    return title.length <= 14 ? title : title.substr(0, 14) + '...'
+  }
 
   const sumPrice = () => {
-    return (cartItem.price * cartItem.quantity).toFixed(2);
-  };
+    return (cartItem.price * cartItem.quantity).toFixed(2)
+  }
 
   return (
     <CartItemCardWrapper>
@@ -37,7 +36,7 @@ const CartItem = ({ id, title, price, image, quantity }) => {
           ></Button>
           <div>{cartItem.quantity}</div>
           <Button
-            onClick={() => dispatch(addedToCart(product))}
+            onClick={() => dispatch(addToCart(product))}
             content={<FaPlus />}
             color="grey"
             animation="color"
@@ -45,8 +44,8 @@ const CartItem = ({ id, title, price, image, quantity }) => {
         </AmountChanger>
       </Details>
     </CartItemCardWrapper>
-  );
-};
+  )
+}
 
 CartItem.propTypes = {
   id: PropTypes.number.isRequired,
@@ -54,22 +53,22 @@ CartItem.propTypes = {
   price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
-};
+}
 
 const CartItemCardWrapper = styled.div`
   display: flex;
-`;
+`
 
 const ImageContainer = styled.div`
   height: 13rem;
   width: 20%;
   margin: auto;
-`;
+`
 
 const Image = styled.img`
   width: auto;
   height: 100%;
-`;
+`
 
 const Details = styled.div`
   display: flex;
@@ -78,18 +77,18 @@ const Details = styled.div`
   justify-content: space-between;
   width: 100%;
   font-size: 2rem;
-`;
+`
 
 const Title = styled.div`
   height: 3rem;
   font-weight: bold;
   overflow: hidden;
-`;
+`
 
 const AmountChanger = styled.div`
   display: flex;
   align-items: center;
   gap: 3rem;
-`;
+`
 
-export default CartItem;
+export default CartItem

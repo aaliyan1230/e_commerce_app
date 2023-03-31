@@ -10,4 +10,4 @@ This project is a dummy e commerce application built with redux for state manage
 
 --redux
 
---fakestore API
+--fakestore api
